@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · sf-t3-1779642675702-217</title>
+  <meta name="description" content="sf-t3-1779642675702-217에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sf-t3-1779642675702-217.maphoshirts.xyz/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* CSS Reset minimal */
+ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ img, svg { display: block; max-width: 100%; }
+ a { color: inherit; text-decoration: none; }
+
+ body {
+ background: #000;
+ color: #fff;
+ font-family: Impact, system-ui, sans-serif;
+ font-weight: 400;
+ line-height: 1.2;
+ padding: 0;
+ margin: 0;
+ min-height: 100vh;
+ position: relative;
+ overflow-x: hidden;
+ }
+
+ /* 타이포그래피 – raw하고 큰 사이즈 */
+ h1, h2, h3, h4 {
+ font-family: Impact, system-ui, sans-serif;
+ text-transform: uppercase;
+ letter-spacing: -0.02em;
+ line-height: 0.95;
+ }
+ h1 { font-size: clamp(3.5rem, 15vw, 7rem); }
+ h2 { font-size: clamp(2.4rem, 10vw, 4.5rem); }
+ h3 { font-size: clamp(1.8rem, 6vw, 3rem); }
+ p, li, blockquote { font-family: system-ui, sans-serif; font-size: 1.1rem; line-height: 1.5; }
+
+ /* 공간 규칙 – airy */
+ .container {
+ padding: 72px 24px;
+ max-width: 1400px;
+ margin: 0 auto;
+ }
+ section + section { margin-top: 120px; }
+ .section-title {
+ margin-bottom: 48px;
+ display: inline-block;
+ border-bottom: 4px solid #ff3b00;
+ padding-bottom: 8px;
+ transform: rotate(-1deg);
+ }
+
+ /* 버튼 & 링크 – brutalism */
+ .btn {
+ display: inline-block;
+ background: #ff3b00;
+ color: #000;
+ font-family: Impact, system-ui, sans-serif;
+ font-size: 1.3rem;
+ padding: 16px 48px;
+ border: 4px solid #fff;
+ text-transform: uppercase;
+ transition: 0.1s linear;
+ cursor: pointer;
+ }
+ .btn:hover { background: #fff; color: #000; border-color: #ff3b00; transform: scale(1.02) rotate(-1deg); }
+
+ /* 헤더 */
+ header {
+ padding: 24px 24px 0;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-wrap: wrap;
+ border-bottom: 4px solid #ff3b00;
+ }
+ .logo {
+ font-size: 2.2rem;
+ letter-spacing: 4px;
+ transform: rotate(-2deg);
+ color: #ff3b00;
+ }
+ .logo span { color: #fff; }
+
+ /* 네비게이션 – 햄버거 포함 */
+ .nav { display: flex; gap: 24px; align-items: center; font-size: 1.2rem; text-transform: uppercase; }
+ .nav a { border-bottom: 2px solid transparent; transition: 0.1s; padding: 4px 0; }
+ .nav a:hover { border-bottom-color: #ff3b00; color: #ff3b00; }
+ .nav-toggle { display: none; }
+ .nav-toggle-label { display: none; cursor: pointer; padding: 12px; }
+
+ @media (max-width: 768px) {
+ .nav { display: none; flex-direction: column; width: 100%; padding: 24px 0; gap: 16px; text-align: center; border-top: 4px solid #ff3b00; margin-top: 16px; }
+ .nav-toggle:checked ~ .nav { display: flex; }
+ .nav-toggle-label { display: block; position: relative; width: 36px; height: 28px; }
+ .nav-toggle-label span,
+ .nav-toggle-label span::before,
+ .nav-toggle-label span::after {
+ display: block;
+ background: #fff;
+ height: 4px;
+ width: 100%;
+ border-radius: 0;
+ position: absolute;
+ transition: 0.2s;
+ }
+ .nav-toggle-label span { top: 12px; }
+ .nav-toggle-label span::before { content: ''; top: -10px; }
+ .nav-toggle-label span::after { content: ''; top: 10px; }
+ .nav-toggle:checked + .nav-toggle-label span { background: transparent; }
+ .nav-toggle:checked + .nav-toggle-label span::before { top: 0; transform: rotate(45deg); }
+ .nav-toggle:checked + .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); }
+ .container { padding: 36px 16px; }
+ section + section { margin-top: 80px; }
+ }
+
+ /* 히어로 – full bleed 비대칭 */
+ .hero {
+ position: relative;
+ padding: 96px 24px 72px;
+ background: radial-gradient(circle at 20% 30%, #1a1a1a 0%, #000 70%);
+ border-bottom: 4px solid #ff3b00;
+ overflow: hidden;
+ margin-left: -24px;
+ margin-right: -24px;
+ }
+ @media (min-width: 769px) {
+ .hero { padding: 120px 48px 96px; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); }
+ }
+ .hero::after {
+ content: '⚡🔒⚡';
+ position: absolute;
+ bottom: -20px;
+ right: -20px;
+ font-size: 12rem;
+ opacity: 0.15;
+ transform: rotate(15deg);
+ pointer-events: none;
+ }
+ .hero .hero-content {
+ position: relative;
+ z-index: 2;
+ max-width: 900px;
+ }
+ .hero h1 {
+ color: #ff3b00;
+ text-shadow: 4px 4px 0 #000, 8px 8px 0 #fff3;
+ }
+ .hero .tagline {
+ font-size: 1.6rem;
+ margin: 24px 0 48px;
+ border-left: 4px solid #ff3b00;
+ padding-left: 16px;
+ transform: skewX(-3deg);
+ font-family: system-ui, sans-serif;
+ }
+ .hero .meta-badge {
+ display: inline-block;
+ background: #ff3b00;
+ color: #000;
+ padding: 8px 24px;
+ font-size: 1.1rem;
+ border: 3px solid #fff;
+ transform: rotate(1deg);
+ margin-top: 24px;
+ }
+
+ /* 리뷰 섹션 */
+ .reviews-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 48px;
+ }
+ .review-card {
+ background: #111;
+ border: 4px solid #fff;
+ padding: 32px;
+ position: relative;
+ transform: rotate(var(--rot, 0deg));
+ transition: 0.15s;
+ }
+ .review-card:nth-child(odd) { --rot: -1deg; }
+ .review-card:nth-child(even) { --rot: 1.5deg; }
+ .review-card:hover { transform: rotate(0deg) scale(1.02); border-color: #ff3b00; }
+ .review-card .stars { color: #ff3b00; font-size: 1.8rem; letter-spacing: 8px; }
+ .review-card .meta { display: flex; justify-content: space-between; margin-top: 16px; font-size: 0.9rem; opacity: 0.7; border-top: 2px solid #333; padding-top: 12px; }
+ .review-card blockquote { margin-top: 16px; font-style: normal; border-left: 4px solid #ff3b00; padding-left: 16px; }
+
+ /* 푸터 */
+ footer {
+ border-top: 4px solid #ff3b00;
+ padding: 48px 24px;
+ margin-top: 120px;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ align-items: center;
+ gap: 24px;
+ font-size: 0.95rem;
+ }
+ footer .phone a { color: #ff3b00; font-size: 1.5rem; font-family: Impact, system-ui, sans-serif; letter-spacing: 2px; border-bottom: 2px solid #ff3b00; padding-bottom: 4px; }
+ footer .phone a:hover { color: #fff; border-color: #fff; }
+ footer .copy { opacity: 0.6; }
+
+ /* 유틸리티 */
+ .highlight { color: #ff3b00; }
+ .skew { transform: skewX(-3deg); display: inline-block; }
+ .brutal-border { border: 4px solid #fff; }
+ .texture-light { background: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 4px, #111 4px, #111 8px); }
+
+ /* 기타 섹션 */
+ .info-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 48px;
+ }
+ @media (max-width: 768px) { .info-grid { grid-template-columns: 1fr; } }
+ .info-block {
+ border: 4px solid #fff;
+ padding: 32px;
+ background: #0a0a0a;
+ }
+ .info-block h3 { color: #ff3b00; margin-bottom: 16px; }
+ .info-block ul { list-style: none; padding: 0; }
+ .info-block li { padding: 8px 0; border-bottom: 2px solid #222; }
+ .info-block li::before { content: '▸ '; color: #ff3b00; }
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · sf-t3-1779642675702-217">
+  <meta property="og:description" content="sf-t3-1779642675702-217에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sf-t3-1779642675702-217.maphoshirts.xyz/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="logo">
+ <span>⌘</span>PROXY<span>PBN</span>
+ </div>
+ <input type="checkbox" id="nav-toggle" class="nav-toggle">
+ <label for="nav-toggle" class="nav-toggle-label"></label>
+ <nav class="nav" aria-label="주 메뉴">
+ <a href="#">홈</a>
+ <a href="#">프로그램</a>
+ <a href="#">후기</a>
+ <a href="#">연락처</a>
+ </nav>
+</header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 33개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1472.html">백링크 자동화 프로그램 이용자가 확인할 구글 알고리즘 고신용 도메인 보증 카드 발급 기준</a>
+        <p class="post-item__summary">마포의 백링크 자동화 프로그램를 비교할 때 가장 피해야 할 것은 한 문장짜리 홍보 문구만 믿는 일입니다. 실제로 도움이 되는 글은 조건을 나누고, 읽는 사람이 스스로 판단할 여지를 남깁니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0018.html">백링크 자동화 프로그램이 전자상거래에 새 바람을 불어넣다</a>
+        <p class="post-item__summary">백링크는 검색 엔진에서 사이트의 신뢰도를 높이는 핵심 요소이다. 단일 키워드에 대해 여러 외부 사이트에서 링크가 생성되면 검색 결과 상단에 노출될 확률이 증가한다. 하지만 수작업으로 링크를 구축하면</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0019.html">프록시 보안이 중요한 시대, 마포에서 백링크 자동화 프로그램 활용하기</a>
+        <p class="post-item__summary">디지털 마케팅에서 백링크 작업은 꾸준히 필요한 영역이지만 수작업으로 진행하기에는 시간이 많이 든다. 마포 지역에서 활동하는 운영자라면 백링크 자동화 프로그램을 도입해 반복 작업을 줄이고 전략 수립에</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0020.html">백링크 자동화 프로그램, 마포에서 실현되는 디지털 성과 향상</a>
+        <p class="post-item__summary">백링크 자동화 프로그램은 온라인 가시성을 획정적으로 끌어올리는 키워드입니다. 마포 지역의 기업들은 여기에 맞춘 전략이 필요하죠. 이 솔루션은 도메인 연결을 효율적으로 관리합니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0021.html">백링크 자동화 프로그램으로 프록시 보안 비즈니스 성장시키기</a>
+        <p class="post-item__summary">백링크 자동화 프로그램을 활용하면 프록시 보안 업체의 온라인 가시성을 크게 높일 수 있다. 마포 지역에서 프록시 보안 서비스를 운영 중이라면 검색 결과 상위 노출이 곧 매출로 이어지기 마련이다. 자</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0022.html">백링크 자동화 프로그램, SEO 전략의 새로운 역동</a>
+        <p class="post-item__summary">백링크 자동화 프로그램은 SEO 전략에서 핵심 도구로 부상했다. 기존에 수작업으로 링크를 구축하려 했던 무수한 시간을 단축해 주며, 품질 높은 파트너 사이트와의 연결을 빠르게 실현한다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0023.html">프록시 보안 기반 백링크 자동화 프로그램, 마포 마케팅 전략의 새로운 기준</a>
+        <p class="post-item__summary">온라인 마케팅에서 검색 엔진 최적화는 이제 선택이 아니라 기본기가 되었다. 특히 마포 지역처럼 자영업자와 소규모 사업장이 밀집된 곳에서는 상위 노출 경쟁이 날이 갈수록 치열해지고 있다. 이런 환경에</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0024.html">백링크 자동화 프로그램으로 마포 지역 비즈니스 성장 가속화</a>
+        <p class="post-item__summary">마포의 스타트업들이 SEO에 주목함에 따라 백링크의 중요성이 두드러진다. 최신 백링크 자동화 프로그램은 링크 획득 과정을 효율화하여 시간과 비용을 절감한다. 따라서 매니저들은 검색 엔진 최적화에 더</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0025.html">백링크 자동화 프로그램으로 프록시 보안 마케팅 효율 높이기</a>
+        <p class="post-item__summary">프록시 보안 솔루션을 운영하는 기업이라면 지속적인 백링크 확보가 얼마나 중요한지 잘 알고 있다. 특히 마포 지역에서 비즈니스를 진행할 때는 지역 검색 결과에서의 가시성을 높이는 것이 필수적인데, 이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0026.html">백링크 자동화 프로그램으로 온라인 비즈니스 획기적 성장</a>
+        <p class="post-item__summary">최근 온라인 마케팅에서 백링크는 여전히 핵심이다. 하지만 링크를 직접 만들고 관리하는 작업은 시간과 노력을 많이 요구한다. 백링크 자동화 프로그램은 이 과정을 간소화해준다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0027.html">백링크 자동화 프로그램의 핵심은 프록시 보안에 있다</a>
+        <p class="post-item__summary">마포 지역에서 백링크 자동화 프로그램을 도입할 때 가장 먼저 점검해야 할 요소는 프록시 보안이다. 여러 도메인을 동시에 운영하려면 안정적인 IP 분산 체계가 필요하며, 이는 검색 엔진의 링크 평가에</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0028.html">마포에서 찾는 백링크 자동화 프로그램: 전략적 효율성 향상</a>
+        <p class="post-item__summary">마포 지역의 마케팅 전문가들 사이에서 백링크 자동화 프로그램이 점점 인기를 끌고 있습니다. 반복적인 링크 생성과 검증 과정을 스크립트화함으로써 수작업을 줄이고, 소요되는 시간을 크게 단축할 수 있습</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0029.html">백링크 자동화 프로그램과 프록시 보안, 마포에서 주목받는 조합</a>
+        <p class="post-item__summary">마포 지역에서 디지털 마케팅을 진행할 때 백링크는 검색엔진 순위에 영향을 주는 핵심 요소다. 수동으로 백링크를 관리하려면 적지 않은 시간과 노력이 필요하다. 백링크 자동화 프로그램을 활용하면 이러한</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0030.html">백링크 자동화 프로그램으로 디지털 마케팅 효율성 극대화</a>
+        <p class="post-item__summary">최근 디지털 마케팅 환경은 검색 엔진 최적화와 키워드 경쟁이 치열해졌습니다. 품질이 높은 백링크를 확보하려면 수작업보다 효율적인 자동화 도구가 필수적입니다. 그래서 백링크 자동화 프로그램이 주목받기</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0031.html">백링크 자동화 프로그램 도입 전 확인할 프록시 보안 기준</a>
+        <p class="post-item__summary">백링크 작업의 규모가 커질수록 자동화 프로그램 활용은 선택이 아닌 필수로 여겨지곤 한다. 하지만 동시에 IP 차단이나 크롤링 탐지를 피하기 위한 프록시 보안 설정이 제대로 갖춰져야 한다는 점을 간과</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0032.html">백링크 자동화 프로그램으로 마포에서 디지털 성장을 가속화하다</a>
+        <p class="post-item__summary">마포의 소규모 디지털 사업자들이 이제 백링크 자동화 프로그램을 활용해 검색엔진 노출을 높일 수 있다. 기존에는 개별 백링크를 수작업으로 관리해 오랜 시간이 필요했다. 자동화 도구를 사용하면 매주 새</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0033.html">마포 프록시 보안과 백링크 자동화 프로그램 운영의 핵심 포인트</a>
+        <p class="post-item__summary">백링크 자동화 프로그램을 운영할 때 단순히 링크를 생성하는 기능만으로는 충분하지 않습니다. 프록시 보안 환경이 안정적으로 갖춰져야 검색 엔진과 크롤러가 문제없이 사이트에 접근할 수 있습니다. 마포 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0034.html">백링크 자동화 프로그램으로 마포의 프록시 보안에 새 차원 부여</a>
+        <p class="post-item__summary">온라인 마케팅에서 백링크의 중요성은 부정할 수 없습니다. 하지만 수작업으로 백링크를 관리하다 보면 시간과 자원이 낭비됩니다. 그래서 백링크 자동화 프로그램이 등장했습니다. 이 솔루션은 복잡한 링크 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0466.html">백링크 자동화 프로그램 활용과 무관한 마포 홍대 단체 가라오케 예약 가이드</a>
+        <p class="post-item__summary">흔히 온라인상의 기술적 마케팅인 백링크 자동화 프로그램이 업체의 실질적인 서비스 질까지 보장해 줄 것이라 오해하는 경우가 많다. 하지만 소비자가 직접 체감하는 가라오케의 만족도는 화려한 검색 결과가</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0467.html">백링크 자동화 프로그램 없이 성공하는 마포 홍대 로컬 럭셔리 밤문화 가이드 및 전략</a>
+        <p class="post-item__summary">럭셔리한 밤문화를 온전히 즐기기 위해서는 우선 인원 구성의 적정성을 확보하고 장소의 성격에 맞는 매너를 갖추는 것이 가장 중요하다. 기술적인 마케팅 방식인 백링크 자동화 프로그램에 의존하여 장소를 </p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>

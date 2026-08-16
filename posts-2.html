@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · sf-t3-1779642675702-217</title>
+  <meta name="description" content="sf-t3-1779642675702-217에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sf-t3-1779642675702-217.maphoshirts.xyz/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* CSS Reset minimal */
+ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ img, svg { display: block; max-width: 100%; }
+ a { color: inherit; text-decoration: none; }
+
+ body {
+ background: #000;
+ color: #fff;
+ font-family: Impact, system-ui, sans-serif;
+ font-weight: 400;
+ line-height: 1.2;
+ padding: 0;
+ margin: 0;
+ min-height: 100vh;
+ position: relative;
+ overflow-x: hidden;
+ }
+
+ /* 타이포그래피 – raw하고 큰 사이즈 */
+ h1, h2, h3, h4 {
+ font-family: Impact, system-ui, sans-serif;
+ text-transform: uppercase;
+ letter-spacing: -0.02em;
+ line-height: 0.95;
+ }
+ h1 { font-size: clamp(3.5rem, 15vw, 7rem); }
+ h2 { font-size: clamp(2.4rem, 10vw, 4.5rem); }
+ h3 { font-size: clamp(1.8rem, 6vw, 3rem); }
+ p, li, blockquote { font-family: system-ui, sans-serif; font-size: 1.1rem; line-height: 1.5; }
+
+ /* 공간 규칙 – airy */
+ .container {
+ padding: 72px 24px;
+ max-width: 1400px;
+ margin: 0 auto;
+ }
+ section + section { margin-top: 120px; }
+ .section-title {
+ margin-bottom: 48px;
+ display: inline-block;
+ border-bottom: 4px solid #ff3b00;
+ padding-bottom: 8px;
+ transform: rotate(-1deg);
+ }
+
+ /* 버튼 & 링크 – brutalism */
+ .btn {
+ display: inline-block;
+ background: #ff3b00;
+ color: #000;
+ font-family: Impact, system-ui, sans-serif;
+ font-size: 1.3rem;
+ padding: 16px 48px;
+ border: 4px solid #fff;
+ text-transform: uppercase;
+ transition: 0.1s linear;
+ cursor: pointer;
+ }
+ .btn:hover { background: #fff; color: #000; border-color: #ff3b00; transform: scale(1.02) rotate(-1deg); }
+
+ /* 헤더 */
+ header {
+ padding: 24px 24px 0;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-wrap: wrap;
+ border-bottom: 4px solid #ff3b00;
+ }
+ .logo {
+ font-size: 2.2rem;
+ letter-spacing: 4px;
+ transform: rotate(-2deg);
+ color: #ff3b00;
+ }
+ .logo span { color: #fff; }
+
+ /* 네비게이션 – 햄버거 포함 */
+ .nav { display: flex; gap: 24px; align-items: center; font-size: 1.2rem; text-transform: uppercase; }
+ .nav a { border-bottom: 2px solid transparent; transition: 0.1s; padding: 4px 0; }
+ .nav a:hover { border-bottom-color: #ff3b00; color: #ff3b00; }
+ .nav-toggle { display: none; }
+ .nav-toggle-label { display: none; cursor: pointer; padding: 12px; }
+
+ @media (max-width: 768px) {
+ .nav { display: none; flex-direction: column; width: 100%; padding: 24px 0; gap: 16px; text-align: center; border-top: 4px solid #ff3b00; margin-top: 16px; }
+ .nav-toggle:checked ~ .nav { display: flex; }
+ .nav-toggle-label { display: block; position: relative; width: 36px; height: 28px; }
+ .nav-toggle-label span,
+ .nav-toggle-label span::before,
+ .nav-toggle-label span::after {
+ display: block;
+ background: #fff;
+ height: 4px;
+ width: 100%;
+ border-radius: 0;
+ position: absolute;
+ transition: 0.2s;
+ }
+ .nav-toggle-label span { top: 12px; }
+ .nav-toggle-label span::before { content: ''; top: -10px; }
+ .nav-toggle-label span::after { content: ''; top: 10px; }
+ .nav-toggle:checked + .nav-toggle-label span { background: transparent; }
+ .nav-toggle:checked + .nav-toggle-label span::before { top: 0; transform: rotate(45deg); }
+ .nav-toggle:checked + .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); }
+ .container { padding: 36px 16px; }
+ section + section { margin-top: 80px; }
+ }
+
+ /* 히어로 – full bleed 비대칭 */
+ .hero {
+ position: relative;
+ padding: 96px 24px 72px;
+ background: radial-gradient(circle at 20% 30%, #1a1a1a 0%, #000 70%);
+ border-bottom: 4px solid #ff3b00;
+ overflow: hidden;
+ margin-left: -24px;
+ margin-right: -24px;
+ }
+ @media (min-width: 769px) {
+ .hero { padding: 120px 48px 96px; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); }
+ }
+ .hero::after {
+ content: '⚡🔒⚡';
+ position: absolute;
+ bottom: -20px;
+ right: -20px;
+ font-size: 12rem;
+ opacity: 0.15;
+ transform: rotate(15deg);
+ pointer-events: none;
+ }
+ .hero .hero-content {
+ position: relative;
+ z-index: 2;
+ max-width: 900px;
+ }
+ .hero h1 {
+ color: #ff3b00;
+ text-shadow: 4px 4px 0 #000, 8px 8px 0 #fff3;
+ }
+ .hero .tagline {
+ font-size: 1.6rem;
+ margin: 24px 0 48px;
+ border-left: 4px solid #ff3b00;
+ padding-left: 16px;
+ transform: skewX(-3deg);
+ font-family: system-ui, sans-serif;
+ }
+ .hero .meta-badge {
+ display: inline-block;
+ background: #ff3b00;
+ color: #000;
+ padding: 8px 24px;
+ font-size: 1.1rem;
+ border: 3px solid #fff;
+ transform: rotate(1deg);
+ margin-top: 24px;
+ }
+
+ /* 리뷰 섹션 */
+ .reviews-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 48px;
+ }
+ .review-card {
+ background: #111;
+ border: 4px solid #fff;
+ padding: 32px;
+ position: relative;
+ transform: rotate(var(--rot, 0deg));
+ transition: 0.15s;
+ }
+ .review-card:nth-child(odd) { --rot: -1deg; }
+ .review-card:nth-child(even) { --rot: 1.5deg; }
+ .review-card:hover { transform: rotate(0deg) scale(1.02); border-color: #ff3b00; }
+ .review-card .stars { color: #ff3b00; font-size: 1.8rem; letter-spacing: 8px; }
+ .review-card .meta { display: flex; justify-content: space-between; margin-top: 16px; font-size: 0.9rem; opacity: 0.7; border-top: 2px solid #333; padding-top: 12px; }
+ .review-card blockquote { margin-top: 16px; font-style: normal; border-left: 4px solid #ff3b00; padding-left: 16px; }
+
+ /* 푸터 */
+ footer {
+ border-top: 4px solid #ff3b00;
+ padding: 48px 24px;
+ margin-top: 120px;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ align-items: center;
+ gap: 24px;
+ font-size: 0.95rem;
+ }
+ footer .phone a { color: #ff3b00; font-size: 1.5rem; font-family: Impact, system-ui, sans-serif; letter-spacing: 2px; border-bottom: 2px solid #ff3b00; padding-bottom: 4px; }
+ footer .phone a:hover { color: #fff; border-color: #fff; }
+ footer .copy { opacity: 0.6; }
+
+ /* 유틸리티 */
+ .highlight { color: #ff3b00; }
+ .skew { transform: skewX(-3deg); display: inline-block; }
+ .brutal-border { border: 4px solid #fff; }
+ .texture-light { background: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 4px, #111 4px, #111 8px); }
+
+ /* 기타 섹션 */
+ .info-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 48px;
+ }
+ @media (max-width: 768px) { .info-grid { grid-template-columns: 1fr; } }
+ .info-block {
+ border: 4px solid #fff;
+ padding: 32px;
+ background: #0a0a0a;
+ }
+ .info-block h3 { color: #ff3b00; margin-bottom: 16px; }
+ .info-block ul { list-style: none; padding: 0; }
+ .info-block li { padding: 8px 0; border-bottom: 2px solid #222; }
+ .info-block li::before { content: '▸ '; color: #ff3b00; }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · sf-t3-1779642675702-217">
+  <meta property="og:description" content="sf-t3-1779642675702-217에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sf-t3-1779642675702-217.maphoshirts.xyz/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="logo">
+ <span>⌘</span>PROXY<span>PBN</span>
+ </div>
+ <input type="checkbox" id="nav-toggle" class="nav-toggle">
+ <label for="nav-toggle" class="nav-toggle-label"></label>
+ <nav class="nav" aria-label="주 메뉴">
+ <a href="#">홈</a>
+ <a href="#">프로그램</a>
+ <a href="#">후기</a>
+ <a href="#">연락처</a>
+ </nav>
+</header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 33개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0232.html">백링크 자동화 프로그램 활용과 마곡 가라오케 추천정보</a>
+        <p class="post-item__summary">백링크 자동화 프로그램 기술이 발전하듯, 우리가 방문하는 서비스 공간의 정보 또한 디지털 환경에서 더욱 정교해지고 있습니다. 마곡 지역에서 가라오케를 찾을 때도 단순한 검색에 의존하기보다는 체크리스</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0233.html">백링크 자동화 프로그램 활용 마곡 유흥 추천정보 확인하는 법</a>
+        <p class="post-item__summary">낯선 지역에서 저녁 시간을 보낼 장소를 찾다가 디지털 마케팅 도구인 백링크 자동화 프로그램 관련 검색 결과에 노출된 정보를 우연히 접하는 경우가 있습니다. 이런 데이터들은 종종 특정 업체의 광고성 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0234.html">백링크 자동화 프로그램 분석을 통한 합정 노래방 추천정보 팁</a>
+        <p class="post-item__summary">흔히들 합정 지역의 노래방은 늦은 밤에만 붐빌 것이라는 오해를 가지고 있습니다. 하지만 특정 백링크 자동화 프로그램의 검색 경향을 분석해보면, 사실은 퇴근 직후의 초저녁 시간대에도 활발한 수요가 존</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0235.html">백링크 자동화 프로그램으로 보는 연남 클럽 추천정보 선택 기준</a>
+        <p class="post-item__summary">연남 지역에서 성공적인 밤을 보내기 위해서는 음악 장르, 공간의 면적, 그리고 입장 시스템이라는 세 가지 충족 조건이 필수적입니다. 백링크 자동화 프로그램 관련 검색 흐름을 보면 최근 사용자들은 자</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0236.html">백링크 자동화 프로그램 데이터 기반 합정 셔츠룸 추천정보 선정</a>
+        <p class="post-item__summary">평소 셔츠룸을 방문할 때 무엇을 가장 중요하게 생각하시나요? 단순히 시설의 화려함만을 기준으로 삼고 있지는 않은지 스스로 질문해 볼 필요가 있습니다. 백링크 자동화 프로그램 등을 통해 무분별하게 쏟</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0237.html">백링크 자동화 프로그램 활용과 공덕 가라오케 추천정보 분석</a>
+        <p class="post-item__summary">온라인에서 정보를 찾을 때 흔히 활용되는 백링크 자동화 프로그램 기술처럼, 지역 서비스를 선택할 때도 체계적인 확인 단계가 필요합니다. 공덕 지역에서 만족스러운 저녁 시간을 보내기 위해서는 신뢰할 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0238.html">백링크 자동화 프로그램 관점의 상수 마사지 추천정보 비교</a>
+        <p class="post-item__summary">백링크 자동화 프로그램이 데이터의 가치를 판별하듯, 상수 지역에서 적절한 마사지 샵을 찾을 때도 우리만의 엄격한 판단 기준이 필요합니다. 이용자들은 흔히 저렴한 비용과 높은 서비스 품질 사이에서 고</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0239.html">백링크 자동화 프로그램 분석과 망원 노래방 추천정보 예약</a>
+        <p class="post-item__summary">백링크 자동화 프로그램이 구조적인 문제를 간과하면 결과가 좋지 않듯, 망원 지역에서 노래방을 예약할 때도 서두르다 보면 실패하는 지점이 명확히 존재합니다. 가장 흔한 실수는 현장의 구체적인 상황을 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0240.html">백링크 자동화 프로그램 체크리스트와 홍대 노래방 추천정보</a>
+        <p class="post-item__summary">백링크 자동화 프로그램이 효율적인 운영을 위해 점검 항목을 따지듯, 홍대 지역에서 즐거운 노래방 시간을 보내려면 몇 가지 중요한 포인트를 미리 확인해야 합니다. 특히 유동 인구가 많은 지역 특성상 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0241.html">백링크 자동화 프로그램 활용과 공덕 셔츠룸 추천정보 탐색법</a>
+        <p class="post-item__summary">마케팅 효율을 높이기 위해 백링크 자동화 프로그램을 도입하려는 이들이 늘고 있습니다. 디지털 도구는 편리하지만, 오프라인의 공간을 선택할 때는 보다 세심한 주의가 필요합니다. 특히 공덕 지역에서 셔</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0242.html">백링크 자동화 프로그램에 대한 오해와 연남 유흥 추천정보</a>
+        <p class="post-item__summary">백링크 자동화 프로그램을 사용하면 모든 온라인 정보가 정확할 것이라는 생각은 큰 오해입니다. 검색 엔진의 알고리즘은 방대한 데이터를 수집하지만, 오프라인 환경의 실시간 변동성까지 완벽히 반영하기는 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/interview-002-129sdnp.html">백링크 자동화 프로그램 경험자에게 물어본 현실적인 판단 기준</a>
+        <p class="post-item__summary">마포 지역에서 프록시 보안 및 네트워크 최적화 업무를 수행하다 보면 백링크 자동화 프로그램의 효율성에 대해 문의하는 경우가 많습니다. 자동화 도구는 반복적인 업무를 줄여주는 강력한 수단이 될 수 있</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-001-129sdnp.html">백링크 자동화 프로그램에 관한 흔한 오해, 직접 확인해보니 달랐던 점</a>
+        <p class="post-item__summary">아, 진짜... 2013년 겨울, 블레이드 러너의 마무리 컷에서 유니콘 꿈 시퀀스가 삽입된 건 정말 인상적이었어. 리들리 스콧 감독이 왜 그렇게 했는지에 대한 논쟁이 있었는데, 그때 리들리 스콧은 </p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
